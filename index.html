@@ -98,23 +98,6 @@ You can edit the instructions text for entering usernames below.
 <!-- 
 /* 
   
-**Avatar choice**
----------
-You can edit the instructions text. The text "Your choice of avatar will not be recorded or analyzed" depends on whether you record the choice of avatar.
-
-*/ 
--->	<h3>Please select an avatar</h3>
-	This avatar will represent you during the group task, but will not be linked to any of your responses. <br>Your choice of avatar will not be recorded or analyzed.
-	<br><br>
-	<div class="avatars"></div>
-	<br><button type="submit"  id="submit_avatar">Submit</button>
-	<br><br>
-</div>	
-
-<div id="demo" style="display:none;" class="instr">
-<!-- 
-/* 
-  
 **Demo**
 ---------
 You can edit the instructions text for entering demo below.
@@ -161,6 +144,23 @@ You can edit the instructions text for entering demo below.
 </div>
 	
 <div id="text" style="display:none;" class="instr">	
+<!-- 
+/* 
+  
+**Avatar choice**
+---------
+You can edit the instructions text. The text "Your choice of avatar will not be recorded or analyzed" depends on whether you record the choice of avatar.
+
+*/ 
+-->	<h3>Please select an avatar</h3>
+	This avatar will represent you during the group task, but will not be linked to any of your responses. <br>Your choice of avatar will not be recorded or analyzed.
+	<br><br>
+	<div class="avatars"></div>
+	<br><button type="submit"  id="submit_avatar">Submit</button>
+	<br><br>
+</div>	
+
+<div id="demo" style="display:none;" class="instr">
 <!-- 
 /* 
   
@@ -219,99 +219,6 @@ You can edit the instructions text. The prompt to try and form an impression of 
   </div>
 </div>
 
-<div id="after_task" style="display:none;" class="instr">
-	<h3>Full profiles</h3>
-	You will now be able to view the full profile of the users who<br>
-	showed interest in you. Try to compare your first impression<br>
-	of these users to what they wrote about themselves.<br><br>
-	<button type="submit"  id="submit_after_task">Continue</button> <img class="load" src='ajax-loader.gif' id="loader1" style="display:none;">
-</div>
-<!--
-/*
-De två divsen nedan är för after task
-*/
--->
-<div id="profiles" style="display:none;">
-	<button type="submit" id="submit_after_profiles">Continue</button>
-<script type="template/text" id="newtmp">
-  {{#posts1}}
-    <div class="entry1">
-    <div class="tophalf1">
-
-    	<img src="{{avatar}}" class="avatar">
-        <h3>{{username}}</h3>
-    	
-    	<div class="main1">
-		<p><i>"A {{userage}} year old {{usergender}} who's into {{userpolitic}}."</i></p>
-		<p>{{text}} <a href="https://www.google.com">survery</a></p>
-    	</div>
-	
-	
-    	<br style="clear:both;">
-
-    </div>	
-
-    <div class="bottomhalf">
-        </div>
-
-    </div>
-  {{/posts1}}  
-</script>
-</div>
-
-	
-<div id="profiles2" style="display:none;">
-	<div id="countdown1"><span class="secs" style="display: none;"></span>You can now see how your first impression of the users compares to their descriptions of themselves.<br><br>time left:<br><span id="timer1" class="cntr label label-info"></span>
-	<br>
-	<button type="submit" id="continue1" style="display:none;">Continue</button>	
-	</div>
-<script type="template/text" id="newtmp2"> 
-  {{#posts2}}
-    <div class="entry1">
-    <div class="tophalf1">
-
-    	<img src="{{avatar}}" class="avatar">
-        <h3>{{username}}</h3>
-    	
-    	<div class="main1">
-		<p><i>"A {{userage}} year old {{usergender}} who's into {{userpolitic}}."</i></p>
-		<p>{{text}}</p>
-    	</div>
-	
-	
-    	<br style="clear:both;">
-
-    </div>	
-
-    <div class="bottomhalf">
-    </div>
-
-    </div>
-  {{/posts2}}
-  {{#posts1}}
-    <div class="entry1">
-    <div class="tophalf1">
-
-    	<img src="{{avatar}}" class="avatar">
-        <h3>{{username}}</h3>
-    	
-    	<div class="main1">
-		<p><i>"A {{userage}} year old {{usergender}} who's into {{userpolitic}}."</i></p>
-		<p>{{text}} <a href="https://www.google.com">petition.</a></p>
-    	</div>
-	
-	
-    	<br style="clear:both;">
-
-    </div>	
-
-    <div class="bottomhalf">
-    </div>
-
-    </div>
-  {{/posts1}}
-</script>
-</div>
 <!-- 
 /* 
   
@@ -384,6 +291,67 @@ You can edit the instructions text.
   {{/posts}}  
 </script>
 	
+</div>
+
+<div id="after_task" style="display:none;" class="instr">
+	<h3>Full profiles</h3>
+	You will now be able to view the full profile of the users who<br>
+	showed interest in you. Try to compare your first impression<br>
+	of these users to what they wrote about themselves.<br><br>
+	<button type="submit"  id="submit_after_task">Continue</button> <img class="load" src='ajax-loader.gif' id="loader1" style="display:none;">
+</div>
+	
+<div id="profiles2" style="display:none;">
+	<div id="countdown1"><span class="secs" style="display: none;"></span>You can now see how your first impression of the users compares to their descriptions of themselves.<br><br>time left:<br><span id="timer1" class="cntr label label-info"></span>
+	<br>
+	<button type="submit" id="continue1" style="display:none;">Continue</button>	
+	</div>
+<script type="template/text" id="newtmp2"> 
+  {{#posts2}}
+    <div class="entry1">
+    <div class="tophalf1">
+
+    	<img src="{{avatar}}" class="avatar">
+        <h3>{{username}}</h3>
+    	
+    	<div class="main1">
+		<p><i>"A {{userage}} year old {{usergender}} who's into {{userpolitic}}."</i></p>
+		<p>{{text}}</p>
+    	</div>
+	
+	
+    	<br style="clear:both;">
+
+    </div>	
+
+    <div class="bottomhalf">
+    </div>
+
+    </div>
+  {{/posts2}}
+  {{#posts1}}
+    <div class="entry1">
+    <div class="tophalf1">
+
+    	<img src="{{avatar}}" class="avatar">
+        <h3>{{username}}</h3>
+    	
+    	<div class="main1">
+		<p><i>"A {{userage}} year old {{usergender}} who's into {{userpolitic}}."</i></p>
+		<p>{{text}} <a href="https://www.google.com">petition.</a></p>
+    	</div>
+	
+	
+    	<br style="clear:both;">
+
+    </div>	
+
+    <div class="bottomhalf">
+    </div>
+
+    </div>
+  {{/posts1}}
+</script>
 </div>
 </body>
 </html>
